@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		185F909F47504EDF878620E5 /* libPods-CestOuLeSoleilTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 758838676C4D439186B80AD8 /* libPods-CestOuLeSoleilTests.a */; };
+		5D888FF44059494FB7BDF29D /* libPods-CestOuLeSoleil.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 14C554C9964A48878B534B7D /* libPods-CestOuLeSoleil.a */; };
 		B7C09FC619196F0900D3822A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7C09FC519196F0900D3822A /* Foundation.framework */; };
 		B7C09FC819196F0900D3822A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7C09FC719196F0900D3822A /* CoreGraphics.framework */; };
 		B7C09FCA19196F0900D3822A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7C09FC919196F0900D3822A /* UIKit.framework */; };
@@ -22,6 +24,19 @@
 		B7C09FEA19196F0A00D3822A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7C09FC919196F0900D3822A /* UIKit.framework */; };
 		B7C09FF219196F0A00D3822A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B7C09FF019196F0A00D3822A /* InfoPlist.strings */; };
 		B7C09FF419196F0A00D3822A /* CestOuLeSoleilTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B7C09FF319196F0A00D3822A /* CestOuLeSoleilTests.m */; };
+		B7C09FFE1919739F00D3822A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7C09FFD1919739F00D3822A /* CoreLocation.framework */; };
+		B7C0A000191973B900D3822A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7C09FFF191973B900D3822A /* MapKit.framework */; };
+		B7C0A0501919753500D3822A /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7C0A04C1919753500D3822A /* MobileCoreServices.framework */; };
+		B7C0A0511919753500D3822A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7C0A04D1919753500D3822A /* QuartzCore.framework */; };
+		B7C0A0521919753500D3822A /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7C0A04E1919753500D3822A /* Security.framework */; };
+		B7C0A0531919753500D3822A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7C0A04F1919753500D3822A /* SystemConfiguration.framework */; };
+		B7C0A05619197CA400D3822A /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7C0A05519197CA400D3822A /* MapViewController.m */; };
+		B7C0A05719197CA400D3822A /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7C0A05519197CA400D3822A /* MapViewController.m */; };
+		B7EF3EC819199277007A06C0 /* NSDictionary+terrasses.m in Sources */ = {isa = PBXBuildFile; fileRef = B7EF3EC519199277007A06C0 /* NSDictionary+terrasses.m */; };
+		B7EF3EC919199277007A06C0 /* NSDictionary+terrasses_package.m in Sources */ = {isa = PBXBuildFile; fileRef = B7EF3EC719199277007A06C0 /* NSDictionary+terrasses_package.m */; };
+		B7EF3ECC19218151007A06C0 /* FavorisTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7EF3ECB19218151007A06C0 /* FavorisTableViewController.m */; };
+		B7EF3ED2192186F2007A06C0 /* HorizontalTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = B7EF3ED1192186F2007A06C0 /* HorizontalTableView.m */; };
+		B7EF3EDB1921BF4F007A06C0 /* TerrasseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7EF3EDA1921BF4F007A06C0 /* TerrasseTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +50,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		14C554C9964A48878B534B7D /* libPods-CestOuLeSoleil.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CestOuLeSoleil.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6015FFF52DFB42F38396610E /* Pods-CestOuLeSoleilTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CestOuLeSoleilTests.xcconfig"; path = "Pods/Pods-CestOuLeSoleilTests.xcconfig"; sourceTree = "<group>"; };
+		758838676C4D439186B80AD8 /* libPods-CestOuLeSoleilTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CestOuLeSoleilTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		97AC1EF46E584E229D7EB018 /* Pods-CestOuLeSoleil.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CestOuLeSoleil.xcconfig"; path = "Pods/Pods-CestOuLeSoleil.xcconfig"; sourceTree = "<group>"; };
 		B7C09FC219196F0900D3822A /* CestOuLeSoleil.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CestOuLeSoleil.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7C09FC519196F0900D3822A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B7C09FC719196F0900D3822A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -55,6 +74,25 @@
 		B7C09FEF19196F0A00D3822A /* CestOuLeSoleilTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CestOuLeSoleilTests-Info.plist"; sourceTree = "<group>"; };
 		B7C09FF119196F0A00D3822A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B7C09FF319196F0A00D3822A /* CestOuLeSoleilTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CestOuLeSoleilTests.m; sourceTree = "<group>"; };
+		B7C09FFD1919739F00D3822A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		B7C09FFF191973B900D3822A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		B7C0A04C1919753500D3822A /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		B7C0A04D1919753500D3822A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		B7C0A04E1919753500D3822A /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		B7C0A04F1919753500D3822A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		B7C0A05419197CA400D3822A /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		B7C0A05519197CA400D3822A /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		B7C0A7BE1919880300D3822A /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		B7EF3EC419199277007A06C0 /* NSDictionary+terrasses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+terrasses.h"; sourceTree = "<group>"; };
+		B7EF3EC519199277007A06C0 /* NSDictionary+terrasses.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+terrasses.m"; sourceTree = "<group>"; };
+		B7EF3EC619199277007A06C0 /* NSDictionary+terrasses_package.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+terrasses_package.h"; sourceTree = "<group>"; };
+		B7EF3EC719199277007A06C0 /* NSDictionary+terrasses_package.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+terrasses_package.m"; sourceTree = "<group>"; };
+		B7EF3ECA19218151007A06C0 /* FavorisTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavorisTableViewController.h; sourceTree = "<group>"; };
+		B7EF3ECB19218151007A06C0 /* FavorisTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavorisTableViewController.m; sourceTree = "<group>"; };
+		B7EF3ED0192186F2007A06C0 /* HorizontalTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorizontalTableView.h; sourceTree = "<group>"; };
+		B7EF3ED1192186F2007A06C0 /* HorizontalTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HorizontalTableView.m; sourceTree = "<group>"; };
+		B7EF3ED91921BF4F007A06C0 /* TerrasseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TerrasseTableViewController.h; sourceTree = "<group>"; };
+		B7EF3EDA1921BF4F007A06C0 /* TerrasseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TerrasseTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,9 +100,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7C0A0501919753500D3822A /* MobileCoreServices.framework in Frameworks */,
+				B7C0A0511919753500D3822A /* QuartzCore.framework in Frameworks */,
+				B7C0A0521919753500D3822A /* Security.framework in Frameworks */,
+				B7C0A0531919753500D3822A /* SystemConfiguration.framework in Frameworks */,
+				B7C0A000191973B900D3822A /* MapKit.framework in Frameworks */,
+				B7C09FFE1919739F00D3822A /* CoreLocation.framework in Frameworks */,
 				B7C09FC819196F0900D3822A /* CoreGraphics.framework in Frameworks */,
 				B7C09FCA19196F0900D3822A /* UIKit.framework in Frameworks */,
 				B7C09FC619196F0900D3822A /* Foundation.framework in Frameworks */,
+				5D888FF44059494FB7BDF29D /* libPods-CestOuLeSoleil.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +120,7 @@
 				B7C09FE819196F0A00D3822A /* XCTest.framework in Frameworks */,
 				B7C09FEA19196F0A00D3822A /* UIKit.framework in Frameworks */,
 				B7C09FE919196F0A00D3822A /* Foundation.framework in Frameworks */,
+				185F909F47504EDF878620E5 /* libPods-CestOuLeSoleilTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +134,8 @@
 				B7C09FED19196F0A00D3822A /* CestOuLeSoleilTests */,
 				B7C09FC419196F0900D3822A /* Frameworks */,
 				B7C09FC319196F0900D3822A /* Products */,
+				97AC1EF46E584E229D7EB018 /* Pods-CestOuLeSoleil.xcconfig */,
+				6015FFF52DFB42F38396610E /* Pods-CestOuLeSoleilTests.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,10 +151,19 @@
 		B7C09FC419196F0900D3822A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B7C0A7BE1919880300D3822A /* SenTestingKit.framework */,
+				B7C0A04C1919753500D3822A /* MobileCoreServices.framework */,
+				B7C0A04D1919753500D3822A /* QuartzCore.framework */,
+				B7C0A04E1919753500D3822A /* Security.framework */,
+				B7C0A04F1919753500D3822A /* SystemConfiguration.framework */,
+				B7C09FFF191973B900D3822A /* MapKit.framework */,
+				B7C09FFD1919739F00D3822A /* CoreLocation.framework */,
 				B7C09FC519196F0900D3822A /* Foundation.framework */,
 				B7C09FC719196F0900D3822A /* CoreGraphics.framework */,
 				B7C09FC919196F0900D3822A /* UIKit.framework */,
 				B7C09FE719196F0A00D3822A /* XCTest.framework */,
+				14C554C9964A48878B534B7D /* libPods-CestOuLeSoleil.a */,
+				758838676C4D439186B80AD8 /* libPods-CestOuLeSoleilTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -114,6 +171,14 @@
 		B7C09FCB19196F0900D3822A /* CestOuLeSoleil */ = {
 			isa = PBXGroup;
 			children = (
+				B7EF3ED0192186F2007A06C0 /* HorizontalTableView.h */,
+				B7EF3ED1192186F2007A06C0 /* HorizontalTableView.m */,
+				B7C0A05419197CA400D3822A /* MapViewController.h */,
+				B7C0A05519197CA400D3822A /* MapViewController.m */,
+				B7EF3EC419199277007A06C0 /* NSDictionary+terrasses.h */,
+				B7EF3EC519199277007A06C0 /* NSDictionary+terrasses.m */,
+				B7EF3EC619199277007A06C0 /* NSDictionary+terrasses_package.h */,
+				B7EF3EC719199277007A06C0 /* NSDictionary+terrasses_package.m */,
 				B7C09FD419196F0900D3822A /* AppDelegate.h */,
 				B7C09FD519196F0900D3822A /* AppDelegate.m */,
 				B7C09FD719196F0900D3822A /* Main_iPhone.storyboard */,
@@ -122,6 +187,10 @@
 				B7C09FDE19196F0900D3822A /* ViewController.m */,
 				B7C09FE019196F0900D3822A /* Images.xcassets */,
 				B7C09FCC19196F0900D3822A /* Supporting Files */,
+				B7EF3ECA19218151007A06C0 /* FavorisTableViewController.h */,
+				B7EF3ECB19218151007A06C0 /* FavorisTableViewController.m */,
+				B7EF3ED91921BF4F007A06C0 /* TerrasseTableViewController.h */,
+				B7EF3EDA1921BF4F007A06C0 /* TerrasseTableViewController.m */,
 			);
 			path = CestOuLeSoleil;
 			sourceTree = "<group>";
@@ -162,9 +231,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B7C09FF719196F0A00D3822A /* Build configuration list for PBXNativeTarget "CestOuLeSoleil" */;
 			buildPhases = (
+				8A4962D4C6EE4FEBA43DD056 /* Check Pods Manifest.lock */,
 				B7C09FBE19196F0900D3822A /* Sources */,
 				B7C09FBF19196F0900D3822A /* Frameworks */,
 				B7C09FC019196F0900D3822A /* Resources */,
+				5E1751B5D9EC486D8845F027 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -179,9 +250,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B7C09FFA19196F0A00D3822A /* Build configuration list for PBXNativeTarget "CestOuLeSoleilTests" */;
 			buildPhases = (
+				13B5AE47A7074F73A3DD84B5 /* Check Pods Manifest.lock */,
 				B7C09FE219196F0A00D3822A /* Sources */,
 				B7C09FE319196F0A00D3822A /* Frameworks */,
 				B7C09FE419196F0A00D3822A /* Resources */,
+				CDB618C9E1F743B9B1F218C8 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -247,13 +320,82 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		13B5AE47A7074F73A3DD84B5 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5E1751B5D9EC486D8845F027 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-CestOuLeSoleil-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8A4962D4C6EE4FEBA43DD056 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CDB618C9E1F743B9B1F218C8 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-CestOuLeSoleilTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B7C09FBE19196F0900D3822A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				B7C09FDF19196F0900D3822A /* ViewController.m in Sources */,
+				B7EF3ED2192186F2007A06C0 /* HorizontalTableView.m in Sources */,
+				B7EF3EDB1921BF4F007A06C0 /* TerrasseTableViewController.m in Sources */,
+				B7EF3ECC19218151007A06C0 /* FavorisTableViewController.m in Sources */,
+				B7EF3EC819199277007A06C0 /* NSDictionary+terrasses.m in Sources */,
+				B7C0A05619197CA400D3822A /* MapViewController.m in Sources */,
 				B7C09FD619196F0900D3822A /* AppDelegate.m in Sources */,
+				B7EF3EC919199277007A06C0 /* NSDictionary+terrasses_package.m in Sources */,
 				B7C09FD219196F0900D3822A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -263,6 +405,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7C09FF419196F0A00D3822A /* CestOuLeSoleilTests.m in Sources */,
+				B7C0A05719197CA400D3822A /* MapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,12 +529,22 @@
 		};
 		B7C09FF819196F0A00D3822A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 97AC1EF46E584E229D7EB018 /* Pods-CestOuLeSoleil.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CestOuLeSoleil/CestOuLeSoleil-Prefix.pch";
 				INFOPLIST_FILE = "CestOuLeSoleil/CestOuLeSoleil-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CestOuLeSoleil/MapBox-iOS-SDK/MapView/Map/GRMustache/lib",
+					"$(PROJECT_DIR)/CestOuLeSoleil/MapBox-iOS-SDK/Proj4",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -399,12 +552,22 @@
 		};
 		B7C09FF919196F0A00D3822A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 97AC1EF46E584E229D7EB018 /* Pods-CestOuLeSoleil.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CestOuLeSoleil/CestOuLeSoleil-Prefix.pch";
 				INFOPLIST_FILE = "CestOuLeSoleil/CestOuLeSoleil-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CestOuLeSoleil/MapBox-iOS-SDK/MapView/Map/GRMustache/lib",
+					"$(PROJECT_DIR)/CestOuLeSoleil/MapBox-iOS-SDK/Proj4",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -412,6 +575,7 @@
 		};
 		B7C09FFB19196F0A00D3822A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6015FFF52DFB42F38396610E /* Pods-CestOuLeSoleilTests.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CestOuLeSoleil.app/CestOuLeSoleil";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -426,6 +590,11 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "CestOuLeSoleilTests/CestOuLeSoleilTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CestOuLeSoleil/MapBox-iOS-SDK/MapView/Map/GRMustache/lib",
+					"$(PROJECT_DIR)/CestOuLeSoleil/MapBox-iOS-SDK/Proj4",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -434,6 +603,7 @@
 		};
 		B7C09FFC19196F0A00D3822A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6015FFF52DFB42F38396610E /* Pods-CestOuLeSoleilTests.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CestOuLeSoleil.app/CestOuLeSoleil";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -444,6 +614,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CestOuLeSoleil/CestOuLeSoleil-Prefix.pch";
 				INFOPLIST_FILE = "CestOuLeSoleilTests/CestOuLeSoleilTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CestOuLeSoleil/MapBox-iOS-SDK/MapView/Map/GRMustache/lib",
+					"$(PROJECT_DIR)/CestOuLeSoleil/MapBox-iOS-SDK/Proj4",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -469,6 +644,7 @@
 				B7C09FF919196F0A00D3822A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B7C09FFA19196F0A00D3822A /* Build configuration list for PBXNativeTarget "CestOuLeSoleilTests" */ = {
 			isa = XCConfigurationList;
@@ -477,6 +653,7 @@
 				B7C09FFC19196F0A00D3822A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

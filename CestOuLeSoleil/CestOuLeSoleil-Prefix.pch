@@ -11,6 +11,15 @@
 #endif
 
 #ifdef __OBJC__
-    #import <UIKit/UIKit.h>
-    #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
+#import <SystemConfiguration/SystemConfiguration.h>
+#import <MobileCoreServices/MobileCoreServices.h>
+#import "AFNetworking.h"
+#import "Mapbox.h"
+#import "UIKit+AFNetworking.h"
+#import "NSDictionary+terrasses.h"
+#import "NSDictionary+terrasses_package.h"
+#import <QuartzCore/QuartzCore.h>
 #endif

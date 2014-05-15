@@ -1,0 +1,47 @@
+PODS:
+  - AFNetworking (2.2.3):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+    - AFNetworking/UIKit
+  - AFNetworking/NSURLConnection (2.2.3):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.2.3):
+    - AFNetworking/NSURLConnection
+  - AFNetworking/Reachability (2.2.3)
+  - AFNetworking/Security (2.2.3)
+  - AFNetworking/Serialization (2.2.3)
+  - AFNetworking/UIKit (2.2.3):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+  - FMDB (2.0):
+    - FMDB/standard
+  - FMDB/common (2.0)
+  - FMDB/standard (2.0):
+    - FMDB/common
+  - GRMustache (6.8.3):
+    - JRSwizzle (~> 1.0)
+  - JRSwizzle (1.0)
+  - MapBox (1.1.0):
+    - FMDB (= 2.0)
+    - GRMustache (= 6.8.3)
+    - SMCalloutView (= 1.1)
+  - SMCalloutView (1.1)
+
+DEPENDENCIES:
+  - AFNetworking (~> 2.2)
+  - MapBox
+
+SPEC CHECKSUMS:
+  AFNetworking: ae513199cca79e9d7af2708ccabe2ed075550c42
+  FMDB: 9e9052f4e9bfb3ccf237abf7a4edee9e915029fa
+  GRMustache: 1c40b78b8ef5df41738db4bf2b8b2749b9b09253
+  JRSwizzle: 6242ff38485d870fc2636899048ee1ab883ae587
+  MapBox: 9cafea82d4e5caad7d121b50b1a76142695176d3
+  SMCalloutView: 1c7d62044508a8d405c25495c380b17c613f769e
+
+COCOAPODS: 0.32.1
