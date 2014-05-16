@@ -8,17 +8,17 @@
 
 #import "MapViewController.h"
 #import "TerrasseTableViewController.h"
+#import <Mapbox/Mapbox.h>
 #import "MapKit/MKAnnotation.h"
 
-#define kNormalMapID  @"thomwolf.hkfl24gn"
-#define kRetinaMapID  @"thomwolf.hkfl24gn"
+#define kNormalMapID  @"thomwolf.i8g664fa"
 #define CLUSTER_ZOOM 17
 
 static NSString * const BaseURLString = @"http://terrasses.alwaysdata.net/";
 
 @interface MapViewController ()
 
-@property (strong) IBOutlet RMMapView *mapView;
+@property (strong) RMMapView *mapView;
 //@property (strong) NSArray *activeFilterTypes;
 @property (strong) NSDictionary *terrasses;
 @property (nonatomic, assign) RMSphericalTrapezium boundsstart;
@@ -42,8 +42,15 @@ static NSString * const BaseURLString = @"http://terrasses.alwaysdata.net/";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.mapView.tileSource = [[RMMapboxSource alloc] initWithMapID:([[UIScreen mainScreen] scale] > 1.0 ? kRetinaMapID : kNormalMapID)
-                                              enablingDataOnMapView:self.mapView];
+    RMMapboxSource *tileSource = [[RMMapboxSource alloc] initWithMapID:@"thomwolf.i8g664fa"];
+    
+    self.mapView = [[RMMapView alloc] initWithFrame:self.view.bounds andTilesource:tileSource];
+    
+    [self.view addSubview:self.mapView];
+    
+    NSLog(@"youhouh");
+    NSLog(tileSource.debugDescription);
+    self.mapView.delegate = self;
     
     //    self.mapView.zoom = 16;
     self.mapView.minZoom = 16;
@@ -60,7 +67,7 @@ static NSString * const BaseURLString = @"http://terrasses.alwaysdata.net/";
     
     self.mapView.showsUserLocation = YES;
     
-    self.title = [self.mapView.tileSource shortName];
+    self.title = @"C'est où le soleil";//[self.mapView.tileSource shortName];
     
     [self.mapView setCenterCoordinate:(CLLocationCoordinate2D) {48.8472876, 2.3482246}];
     [self.mapView setZoom:17];
@@ -68,6 +75,7 @@ static NSString * const BaseURLString = @"http://terrasses.alwaysdata.net/";
     self.mapView.clusteringEnabled = YES;
     
     _numarray = [[NSMutableArray alloc] init];
+    NSLog(@"youhouh2");
 }
 
 - (void)didReceiveMemoryWarning
@@ -152,6 +160,7 @@ static NSString * const BaseURLString = @"http://terrasses.alwaysdata.net/";
  *   @param userLocation The location object representing the user’s latest location. */
 - (void)mapView:(RMMapView *)mapView didUpdateUserLocation:(RMUserLocation *)userLocation
 {
+    NSLog(@"youhouh2");
     if(!self.readyToQueryMarkers)
     {
         self.readyToQueryMarkers = YES;
@@ -368,7 +377,7 @@ static NSString * const BaseURLString = @"http://terrasses.alwaysdata.net/";
         [self.mapView setCenterCoordinate:markercoord];
         
         // Open annotation
-        NSDictionary *userinfo2 = [NSDictionary dictionaryWithObjectsAndKeys:[place num],@"num", [place nombresoleil], @"sunny", [place timenext], @"timenext", nil ];//,@"value2",@"key2", nil];
+        //NSDictionary *userinfo2 = [NSDictionary dictionaryWithObjectsAndKeys:[place num],@"num", [place nombresoleil], @"sunny", [place timenext], @"timenext", nil ];//,@"value2",@"key2", nil];
         for (id<MKAnnotation> currentAnnotation in self.mapView.annotations) {
             if ([currentAnnotation.title isEqual:[place placename_ter]]){
                 [self.mapView selectAnnotation:currentAnnotation animated:FALSE];

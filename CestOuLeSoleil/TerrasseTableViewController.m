@@ -90,15 +90,15 @@ static NSString * const MarkerURLString = @"http://terrasses.alwaysdata.net/imag
     _terrasseName.text = [self.terr_info placename_ter]; //@"test";
     _terrasseType.text = [self.terr_info dosred_type]; //@"test";
     _terrasseAdresse.text = [NSString stringWithFormat:@"%@ %@",[self.terr_info address], [self.terr_info zip]]; //@"test";
-
+    
     if ([self.favorites containsObject:self.terr_info]) {
         self.favorisLabel.text = @"Retirer des favoris";
     } else {
         self.favorisLabel.text = @"Ajouter aux favoris";
-   }
+    }
     self.title = [self.terr_info placename_ter];
     
-
+    
     NSString *markerURL = (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault, (CFStringRef)MarkerURLString, NULL, (CFStringRef)@"!*'();:@&=+$,/?%#[]", kCFStringEncodingUTF8));
     
     
@@ -116,19 +116,19 @@ static NSString * const MarkerURLString = @"http://terrasses.alwaysdata.net/imag
     _sunList.delegate = self;
     
     [_sunList performSelector:@selector(refreshData) withObject:nil afterDelay:0.3f];
-
-/*    CGRect  viewRect1 = self.view.bounds;
-    viewRect1.origin.y = 400;
     
-    UITableView *tbleView = [[UITableView alloc] initWithFrame:viewRect1];
-    
-    tbleView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-    
-    tbleView.delegate = self;
-    
-    [tbleView reloadData];
-    
-    [self.view addSubview:tbleView];*/
+    /*    CGRect  viewRect1 = self.view.bounds;
+     viewRect1.origin.y = 400;
+     
+     UITableView *tbleView = [[UITableView alloc] initWithFrame:viewRect1];
+     
+     tbleView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+     
+     tbleView.delegate = self;
+     
+     [tbleView reloadData];
+     
+     [self.view addSubview:tbleView];*/
 }
 
 - (void)didReceiveMemoryWarning
@@ -137,21 +137,21 @@ static NSString * const MarkerURLString = @"http://terrasses.alwaysdata.net/imag
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)imageClick:(id)sender {
-
+    
 }
 
 -(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *theCellClicked = [tableView cellForRowAtIndexPath:indexPath];
-
+    
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
- 
-    UITableViewCell *staticCell = [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
+    
+    //    UITableViewCell *staticCell = [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
     NSLog([NSString stringWithFormat:@"%i %i", indexPath.row, indexPath.section]);
     if (theCellClicked == _addToFavorites) {
         if (![self.favorites containsObject:self.terr_info]){
             NSLog(@"add to favorite");
             self.favorisLabel.text = @"Retirer des favoris";
-
+            
             [self.favorites addObject:self.terr_info];
             NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
             [defaults setValue:self.favorites forKey:@"favorites"];
@@ -164,6 +164,37 @@ static NSString * const MarkerURLString = @"http://terrasses.alwaysdata.net/imag
             NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
             [defaults setValue:self.favorites forKey:@"favorites"];
             [defaults synchronize];
+        }
+    }
+}
+
+- (BOOL)tableView:(UITableView *)tableView shouldShowMenuForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row == 3){
+        return YES;
+    } else {
+        return NO;
+    }
+}
+
+- (BOOL)tableView:(UITableView *)tableView canPerformAction:(SEL)action forRowAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender
+{
+    if (indexPath.row == 3){
+        return (action == @selector(copy:));
+    } else {
+        return NO;
+    }
+}
+
+- (void)tableView:(UITableView *)tableView performAction:(SEL)action forRowAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender
+{
+    if (indexPath.row == 3){
+        if (action == @selector(copy:)) {
+            NSLog(@"We now copy somehow");
+            UITableViewCell *staticCell = [tableView cellForRowAtIndexPath:indexPath];
+            NSString *copyStringverse = staticCell.textLabel.text;
+            UIPasteboard *pb = [UIPasteboard generalPasteboard];
+            [pb setString:copyStringverse];
         }
     }
 }

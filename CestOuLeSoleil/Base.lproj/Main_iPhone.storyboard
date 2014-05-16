@@ -15,16 +15,6 @@
                     <view key="view" contentMode="scaleToFill" id="Xqh-yz-baL">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yBh-e4-875" customClass="RMMapView">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outlet property="delegate" destination="mze-DL-6s6" id="SYK-KS-K73"/>
-                                </connections>
-                            </view>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="S32-B4-t8s">
@@ -35,7 +25,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="mapView" destination="yBh-e4-875" id="6Ik-0q-em9"/>
                         <segue destination="dHc-aI-WTU" kind="push" identifier="Terrasse" id="fGm-UU-7co"/>
                     </connections>
                 </viewController>
@@ -147,7 +136,7 @@
                         <sections>
                             <tableViewSection id="TVj-WV-gcR">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="185" id="Xgl-ma-5vs">
+                                    <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="185" id="Xgl-ma-5vs">
                                         <rect key="frame" x="0.0" y="64" width="320" height="185"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xgl-ma-5vs" id="11v-Wz-ubT">
@@ -189,7 +178,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Titre" textLabel="O9Y-qq-ndX" detailTextLabel="yI6-uZ-F1H" style="IBUITableViewCellStyleSubtitle" id="bgb-vw-ro8">
+                                    <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Titre" textLabel="O9Y-qq-ndX" detailTextLabel="yI6-uZ-F1H" style="IBUITableViewCellStyleSubtitle" id="bgb-vw-ro8">
                                         <rect key="frame" x="0.0" y="329" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bgb-vw-ro8" id="dUs-UJ-KiH">
@@ -278,6 +267,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="VRl-oa-B4U"/>
+        <segue reference="fGm-UU-7co"/>
     </inferredMetricsTieBreakers>
 </document>
