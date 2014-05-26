@@ -49,7 +49,7 @@ static NSString * const BaseURLString = @"http://terrasses.alwaysdata.net/";
     [self.view addSubview:self.mapView];
     
     NSLog(@"youhouh");
-    NSLog(tileSource.debugDescription);
+    NSLog(@"%@", tileSource.debugDescription);
     self.mapView.delegate = self;
     
     //    self.mapView.zoom = 16;
@@ -75,7 +75,7 @@ static NSString * const BaseURLString = @"http://terrasses.alwaysdata.net/";
     self.mapView.clusteringEnabled = YES;
     
     _numarray = [[NSMutableArray alloc] init];
-    NSLog(@"youhouh2");
+    NSLog(@"%@", @"youhouh2");
 }
 
 - (void)didReceiveMemoryWarning
@@ -95,17 +95,17 @@ static NSString * const BaseURLString = @"http://terrasses.alwaysdata.net/";
     
     operation.responseSerializer = [AFJSONResponseSerializer serializer];
     
-    NSLog([request debugDescription]);
+    NSLog(@"%@", [request debugDescription]);
     
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         // 3
         self.terrasses = (NSDictionary *)responseObject;
-        //      NSLog(@"Youhou");
-        //      NSLog(self.terrasses.description);
+        //      NSLog(@"%@", @"Youhou");
+        //      NSLog(@"%@", self.terrasses.description);
         
         self.first_time = [self.terrasses first_time];
-        //        NSLog(first_time.description);
+        //        NSLog(@"%@", first_time.description);
         //NSNumber * nexttime = first_time;
         
         NSArray * tableau = [self.terrasses tableau];//['tableau'];
@@ -117,7 +117,7 @@ static NSString * const BaseURLString = @"http://terrasses.alwaysdata.net/";
         
         while (place = [enumerator nextObject])
         { // On boucle tant que la méthode ne renvoie pas nil (ce qui casse la condition)
-            NSLog(place.description);
+            NSLog(@"%@", place.description);
             if ([place latitude] && [place longitude])
             {
                 if (![self.numarray containsObject:place])
@@ -133,7 +133,7 @@ static NSString * const BaseURLString = @"http://terrasses.alwaysdata.net/";
                     
                     [self.mapView addAnnotation:marker];
                 } else {
-                    //                   NSLog(@"déjà dans numarray");
+                    //                   NSLog(@"%@", @"déjà dans numarray");
                 }
             }
         }
@@ -160,7 +160,7 @@ static NSString * const BaseURLString = @"http://terrasses.alwaysdata.net/";
  *   @param userLocation The location object representing the user’s latest location. */
 - (void)mapView:(RMMapView *)mapView didUpdateUserLocation:(RMUserLocation *)userLocation
 {
-    NSLog(@"youhouh2");
+    NSLog(@"%@", @"youhouh2");
     if(!self.readyToQueryMarkers)
     {
         self.readyToQueryMarkers = YES;
@@ -327,7 +327,7 @@ static NSString * const BaseURLString = @"http://terrasses.alwaysdata.net/";
 
 - (void)tapOnCalloutAccessoryControl:(UIControl *)control forAnnotation:(RMAnnotation *)annotation onMap:(RMMapView *)map
 {
-    NSLog(@"tapOnCalloutAccessoryControl");
+    NSLog(@"%@", @"tapOnCalloutAccessoryControl");
     [self performSegueWithIdentifier: @"Terrasse" sender: annotation];
 }
 
@@ -352,7 +352,7 @@ static NSString * const BaseURLString = @"http://terrasses.alwaysdata.net/";
         favorisTableViewController.delegate = self;
         
 	} else if ([segue.identifier isEqualToString:@"Terrasse"]) {
-        NSLog(@"prepareForSegue");
+        NSLog(@"%@", @"prepareForSegue");
         
         RMAnnotation *annotation = (RMAnnotation *)sender;
         
@@ -370,7 +370,7 @@ static NSString * const BaseURLString = @"http://terrasses.alwaysdata.net/";
     
     if ([sourceViewController isKindOfClass:[TerrasseTableViewController class]])
     {
-        NSLog(@"Coming from TerrasseTableViewController!");
+        NSLog(@"%@", @"Coming from TerrasseTableViewController!");
         TerrasseTableViewController * terrass = (TerrasseTableViewController *)sourceViewController;
         NSDictionary * place = terrass.terr_info;
         CLLocationCoordinate2D markercoord = CLLocationCoordinate2DMake([[place latitude] doubleValue], [[place longitude] doubleValue]);
@@ -386,7 +386,7 @@ static NSString * const BaseURLString = @"http://terrasses.alwaysdata.net/";
     }
  /*   else if ([sourceViewController isKindOfClass:[GreenViewController class]])
     {
-        NSLog(@"Coming from GREEN!");
+        NSLog(@"%@", @"Coming from GREEN!");
     }*/
 }
 

@@ -10,7 +10,7 @@
 
 @interface TerrasseTableViewController ()
 @property (strong, nonatomic) NSNumber *first_time;
-@property (strong, nonatomic) NSNumber * max_time;
+@property (nonatomic) int val_count;
 @property (strong, nonatomic) NSArray * terr_time_table;
 
 @property (strong) NSMutableArray *favorites;
@@ -34,7 +34,7 @@ static NSString * const MarkerURLString = @"http://terrasses.alwaysdata.net/imag
 {
     [super viewDidLoad];
     
-    NSLog([self.terrasseNumber stringValue]);
+    NSLog(@"%@", [self.terrasseNumber stringValue]);
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     self.favorites = [defaults mutableArrayValueForKey:@"favorites"];
     
@@ -55,17 +55,18 @@ static NSString * const MarkerURLString = @"http://terrasses.alwaysdata.net/imag
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
     operation.responseSerializer = [AFJSONResponseSerializer serializer];
     
-    NSLog([request debugDescription]);
+    NSLog(@"%@", [request debugDescription]);
     
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         // 3
         NSDictionary * terrasseDescription = (NSDictionary *)responseObject;
-        NSLog(@"Youhou");
-        NSLog(terrasseDescription.description);
+        NSLog(@"%@", @"Youhou");
+        NSLog(@"%@", terrasseDescription.description);
         self.terr_info = [terrasseDescription terr_info];
         self.first_time = [terrasseDescription first_time];
-        self.max_time = [terrasseDescription max_time];
+        self.val_count = [[terrasseDescription max_time] intValue] + 1;
+        NSLog(@"val_count: %i", self.val_count);
         self.terr_info = [terrasseDescription terr_info];
         self.terr_time_table = [terrasseDescription terr_time_table];
         [self setupAll];
@@ -107,7 +108,7 @@ static NSString * const MarkerURLString = @"http://terrasses.alwaysdata.net/imag
     
     NSString * terimg = [NSString stringWithFormat:@"http://api.tiles.mapbox.com/v3/thomwolf.hkfl24gn/url-%@(%f,%f)/%f,%f,18/320x180.png",markerURL,lng,lat,lng,lat];
     
-    NSLog(terimg.description);
+    NSLog(@"%@", terimg.description);
     
     [_imgview setImageWithURL:[NSURL URLWithString:terimg]];
     
@@ -116,19 +117,6 @@ static NSString * const MarkerURLString = @"http://terrasses.alwaysdata.net/imag
     _sunList.delegate = self;
     
     [_sunList performSelector:@selector(refreshData) withObject:nil afterDelay:0.3f];
-    
-    /*    CGRect  viewRect1 = self.view.bounds;
-     viewRect1.origin.y = 400;
-     
-     UITableView *tbleView = [[UITableView alloc] initWithFrame:viewRect1];
-     
-     tbleView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-     
-     tbleView.delegate = self;
-     
-     [tbleView reloadData];
-     
-     [self.view addSubview:tbleView];*/
 }
 
 - (void)didReceiveMemoryWarning
@@ -146,10 +134,10 @@ static NSString * const MarkerURLString = @"http://terrasses.alwaysdata.net/imag
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     //    UITableViewCell *staticCell = [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
-    NSLog([NSString stringWithFormat:@"%i %i", indexPath.row, indexPath.section]);
+    NSLog(@"%@", [NSString stringWithFormat:@"%i %i", indexPath.row, indexPath.section]);
     if (theCellClicked == _addToFavorites) {
         if (![self.favorites containsObject:self.terr_info]){
-            NSLog(@"add to favorite");
+            NSLog(@"%@", @"add to favorite");
             self.favorisLabel.text = @"Retirer des favoris";
             
             [self.favorites addObject:self.terr_info];
@@ -157,7 +145,7 @@ static NSString * const MarkerURLString = @"http://terrasses.alwaysdata.net/imag
             [defaults setValue:self.favorites forKey:@"favorites"];
             [defaults synchronize];
         } else {
-            NSLog(@"remove from favorite");
+            NSLog(@"%@", @"remove from favorite");
             self.favorisLabel.text = @"Ajouter aux favoris";
             
             [self.favorites removeObject:self.terr_info];
@@ -190,7 +178,7 @@ static NSString * const MarkerURLString = @"http://terrasses.alwaysdata.net/imag
 {
     if (indexPath.row == 3){
         if (action == @selector(copy:)) {
-            NSLog(@"We now copy somehow");
+            NSLog(@"%@", @"We now copy somehow");
             UITableViewCell *staticCell = [tableView cellForRowAtIndexPath:indexPath];
             NSString *copyStringverse = staticCell.textLabel.text;
             UIPasteboard *pb = [UIPasteboard generalPasteboard];
@@ -203,15 +191,15 @@ static NSString * const MarkerURLString = @"http://terrasses.alwaysdata.net/imag
 #pragma mark HorizontalTableViewDelegate methods
 
 - (NSInteger)numberOfColumnsForTableView:(HorizontalTableView *)tableView {
-    NSLog([NSString stringWithFormat:@"%ld", (unsigned long)self.terr_time_table.count]);
-    return [self.terr_time_table count];
+    NSLog(@"%i", self.val_count);
+    return self.val_count + 1;
 }
 
 - (UIView *)tableView:(HorizontalTableView *)aTableView viewForIndex:(NSInteger)index {
     
     UIView *vw = [aTableView dequeueColumnView];
     if (!vw) {
-        //       NSLog(@"Constructing new view");
+        //       NSLog(@"%@", @"Constructing new view");
         
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 10, 30, 30)];
         [label setText:@"8"];
@@ -229,27 +217,32 @@ static NSString * const MarkerURLString = @"http://terrasses.alwaysdata.net/imag
         vw = mView;
     }
     [vw setBackgroundColor: [UIColor whiteColor]];
-    //    NSLog(vw.debugDescription);
+    //    NSLog(@"%@", vw.debugDescription);
     
     
     UILabel *lbl = (UILabel *)[vw viewWithTag:1234];
-    int timeS = index + [self.first_time intValue];
+    int timeS = (int)index + [self.first_time intValue];
     
     lbl.text = [NSString stringWithFormat:@"%d", timeS];
     
     //   [lbl setCenter:CGPointMake(vw.frame.size.width / 2, 10.0)];
     
     UIImageView *imagg = (UIImageView *)[vw viewWithTag:4321];
-    double nbrtot = [[self.terr_info nombretot] intValue];
-    int quarter = 4;
-    if ([[[self.terr_time_table objectAtIndex:index] nombresoleil] intValue] == 0) {
-        quarter = 0;
+    NSLog(@"index: %i", index);
+    if (index == 0 || index == self.val_count){
+        NSString * name = [NSString stringWithFormat: @"night.png"];
+        NSLog(@"%@", name);
+        imagg.image = [UIImage imageNamed: name];
+    } else {
+        int quarter = 4;
+        if ([[[self.terr_time_table objectAtIndex:index] nombresoleil] intValue] == 0) {
+            quarter = 0;
+        }
+        //(int) floor([[[self.terr_time_table objectAtIndex:index] nombresoleil] doubleValue]/nbrtot)*4;
+        NSString * name = [NSString stringWithFormat:@"sun%d.png",quarter];
+        NSLog(@"%@", name);
+        imagg.image = [UIImage imageNamed: name];
     }
-    //(int) floor([[[self.terr_time_table objectAtIndex:index] nombresoleil] doubleValue]/nbrtot)*4;
-    NSLog(@"nbrtot: %f, nombresoleil: %f",nbrtot, [[[self.terr_time_table objectAtIndex:index] nombresoleil] doubleValue]);
-    NSString * name = [NSString stringWithFormat:@"sun%d.png",quarter];
-    NSLog(name);
-    imagg.image = [UIImage imageNamed: name];
     
 	return vw;
 }

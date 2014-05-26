@@ -12,7 +12,7 @@
 @interface FavorisTableViewController ()
 
 @property (strong, nonatomic) NSNumber *first_time;
-@property (strong, nonatomic) NSNumber * max_time;
+@property (strong, nonatomic) NSNumber *max_time;
 @property (strong, nonatomic) NSDictionary * terr_info;
 @property (strong, nonatomic) NSArray * terr_time_table;
 @property (strong, nonatomic) NSArray *favoritesInfo;
@@ -43,14 +43,14 @@ static NSString * const MarkerURLString = @"http://terrasses.alwaysdata.net/imag
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-
+    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     self.favoritesInfo = [defaults arrayForKey:@"favorites"];
     self.favoritesInfoSun = [NSMutableDictionary dictionary];
     
     NSString *string = [NSString stringWithFormat:@"%@position2.php", BaseURLString];
     
-    NSLog(self.favoritesInfo.debugDescription);
+    NSLog(@"%@", self.favoritesInfo.debugDescription);
     for (id item in self.favoritesInfo) {
         NSDictionary *parameters = @{@"type": @"favorite",
                                      @"num": [[item num]  stringValue]
@@ -61,14 +61,14 @@ static NSString * const MarkerURLString = @"http://terrasses.alwaysdata.net/imag
         AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
         operation.responseSerializer = [AFJSONResponseSerializer serializer];
         
-        NSLog([request debugDescription]);
+        NSLog(@"%@", [request debugDescription]);
         
         [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
             
             // 3
             NSDictionary * terrasseDescription = (NSDictionary *)responseObject;
-            NSLog(@"Youhou");
-            //            NSLog(terrasseDescription.debugDescription);
+            NSLog(@"%@", @"Youhou");
+            //            NSLog(@"%@", terrasseDescription.debugDescription);
             //CREATE OR REPLACE FUNCTION terrasses_favorite(ternum integer, timenum integer) RETURNS table(num integer, address varchar, zip char(5), longitude double precision, latitude double precision, placename_ter varchar, dosred_type varchar, nombretot bigint, nombresoleil bigint, timenext integer)  AS
             self.first_time = [terrasseDescription first_time];
             
@@ -79,7 +79,7 @@ static NSString * const MarkerURLString = @"http://terrasses.alwaysdata.net/imag
             NSLog(@"place: %@", [place debugDescription]);
             
             [self.favoritesInfoSun setObject:place forKey:[[item num]  stringValue]];
-            NSLog([self.favoritesInfoSun debugDescription]);
+            NSLog(@"%@", [self.favoritesInfoSun debugDescription]);
             NSLog(@"Ok favori");
             [self.tableView reloadData];
             
@@ -116,7 +116,7 @@ static NSString * const MarkerURLString = @"http://terrasses.alwaysdata.net/imag
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    NSLog([NSString stringWithFormat:@"%i", [self.favoritesInfo count]]);
+    NSLog(@"%i", [self.favoritesInfo count]);
     return [self.favoritesInfo count];
 }
 
@@ -127,7 +127,7 @@ static NSString * const MarkerURLString = @"http://terrasses.alwaysdata.net/imag
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(self.favoritesInfo.debugDescription);
+    NSLog(@"%@", self.favoritesInfo.debugDescription);
     
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -137,47 +137,49 @@ static NSString * const MarkerURLString = @"http://terrasses.alwaysdata.net/imag
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-    NSLog(@"Youhou");
+    NSLog(@"%@", @"Youhou");
     // Display recipe in the table cell
     NSDictionary * terrasseDescription = [self.favoritesInfo objectAtIndex:indexPath.row];
-    NSLog(terrasseDescription.debugDescription);
+    NSLog(@"%@", terrasseDescription.debugDescription);
     
-    NSLog(@"num:");
-    NSLog([[terrasseDescription num] stringValue]);
+    NSLog(@"%@", @"num:");
+    NSLog(@"%@", [[terrasseDescription num] stringValue]);
     
     NSDictionary * terrasseDescriptionSun = [self.favoritesInfoSun objectForKey:[[terrasseDescription num] stringValue]];
     
-    NSLog(@"terrasseDescriptionSun:");
-    NSLog(terrasseDescriptionSun.debugDescription);
+    NSLog(@"%@", @"terrasseDescriptionSun:");
+    NSLog(@"%@", terrasseDescriptionSun.debugDescription);
     
     UIImageView *terImageView = (UIImageView *)[cell viewWithTag:100];
-    NSLog(terImageView.debugDescription);
-    if (terrasseDescriptionSun != nil) {
-        if ([[terrasseDescriptionSun nombresoleil] intValue] > 0)
-        {
-            terImageView.image = [UIImage imageNamed: @"sun4.png"];
-            NSLog(@"leaf-sun.png");
-            //img2 = [UIImage imageNamed: @"settingsun.png"];
-        } else {
-            terImageView.image = [UIImage imageNamed: @"sun0.png"];
-            //img2 = [UIImage imageNamed: @"risingsun.png"];
-            NSLog(@"leaf-shadow.png");
+    NSLog(@"%@", terImageView.debugDescription);
+    
+
+        if (terrasseDescriptionSun != nil) {
+            if ([[terrasseDescriptionSun nombresoleil] intValue] > 0)
+            {
+                terImageView.image = [UIImage imageNamed: @"sun4.png"];
+                NSLog(@"%@", @"leaf-sun.png");
+                //img2 = [UIImage imageNamed: @"settingsun.png"];
+            } else {
+                terImageView.image = [UIImage imageNamed: @"sun0.png"];
+                //img2 = [UIImage imageNamed: @"risingsun.png"];
+                NSLog(@"%@", @"leaf-shadow.png");
+            }
         }
-    }
     
     UILabel *terNameLabel = (UILabel *)[cell viewWithTag:101];
-    NSLog(terNameLabel.debugDescription);
+    NSLog(@"%@", terNameLabel.debugDescription);
     terNameLabel.text = [terrasseDescription placename_ter];
-    NSLog([terrasseDescription placename_ter]);
-    NSLog(terNameLabel.text);
-    NSLog(@"Youhou");
+    NSLog(@"%@", [terrasseDescription placename_ter]);
+    NSLog(@"%@", terNameLabel.text);
+    NSLog(@"%@", @"Youhou");
     
     UILabel *terAddressLabel = (UILabel *)[cell viewWithTag:102];
-    NSLog(terAddressLabel.debugDescription);
+    NSLog(@"%@", terAddressLabel.debugDescription);
     terAddressLabel.text = [terrasseDescription dosred_type];
-    NSLog([terrasseDescription dosred_type]);
-    NSLog(terAddressLabel.text);
-    NSLog(@"Youhou");
+    NSLog(@"%@", [terrasseDescription dosred_type]);
+    NSLog(@"%@", terAddressLabel.text);
+    NSLog(@"%@", @"Youhou");
     
     return cell;
 }
@@ -186,7 +188,7 @@ static NSString * const MarkerURLString = @"http://terrasses.alwaysdata.net/imag
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
-    NSLog(@"tapOnCalloutAccessoryControl");
+    NSLog(@"%@", @"tapOnCalloutAccessoryControl");
     NSDictionary * terrasseDescription = [self.favoritesInfo objectAtIndex:indexPath.row];
     [self performSegueWithIdentifier: @"TerrasseFavorite" sender: terrasseDescription];
     
@@ -198,7 +200,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"TerrasseFavorite"]) {
-        NSLog(@"prepareForSegue");
+        NSLog(@"%@", @"prepareForSegue");
         
         NSDictionary * terrasseDescription = (NSDictionary *)sender;
         
